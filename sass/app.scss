@@ -10,7 +10,6 @@ $grayish-blue: hsl(218, 22%, 67%);
 }
 
 $laptop: 768px;
-$tablet: 768px;
 
 @mixin laptop {
   @media (min-width: #{$laptop}) {
@@ -18,26 +17,13 @@ $tablet: 768px;
   }
 }
 
-@mixin tablet {
-  @media (min-width: #{$tablet}) {
-    @content;
-  }
-}
-
 body {
   font-size: 16px;
   font-family: "Karla", sans-serif;
-}
-main {
   background-color: $light-gray;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-.container {
-  height: 80%;
+
+.price-component {
   max-width: 312px;
   margin: 72px auto;
   display: flex;
@@ -49,113 +35,113 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .join,
-  .suscribe,
-  .why-us {
-    width: 100%;
-    background-color: white;
-    padding: 0 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+}
+.join,
+.suscribe,
+.why-us {
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  @include laptop() {
+    padding: 40px 40px;
+    justify-content: space-between;
+  }
+}
+.join {
+  background-color: white;
+  height: 268px;
+  font-weight: 700;
+  border-radius: 10px 10px 0 0;
+  @include laptop() {
+    height: 220px;
+  }
+  &__title {
+    color: $cyan;
+    font-size: 20px;
+  }
+  &__subtitle {
+    color: $bright-yellow;
+  }
+  &__desc {
+    color: $grayish-blue;
+    line-height: 30px;
+    font-weight: 400;
+    font-size: 14px;
     @include laptop() {
-      padding: 40px 40px;
-      justify-content: space-between;
+      max-width: 510px;
     }
   }
-  .join {
-    height: 268px;
-    font-weight: 700;
-    border-radius: 10px 10px 0 0;
-    @include laptop() {
-      height: 220px;
-    }
-    .title {
-      color: $cyan;
-      font-size: 20px;
-    }
-    .sub-title {
-      color: $bright-yellow;
-    }
-    .content {
-      color: $grayish-blue;
-      line-height: 30px;
-      font-weight: 400;
-      font-size: 14px;
-      @include laptop() {
-        max-width: 510px;
-      }
-    }
+}
+.suscribe {
+  height: 228px;
+  background-color: $cyan;
+  color: white;
+  @include laptop() {
+    width: 50%;
+    height: 260px;
+    border-radius: 0 0 0 10px;
   }
-  .suscribe {
-    height: 228px;
-    background-color: $cyan;
+  &__title {
     color: white;
-    @include laptop() {
-      width: 50%;
-      height: 260px;
-      border-radius: 0 0 0 10px;
-    }
-    .title {
-      color: white;
-      font-size: 18px;
-    }
-    .price {
-      font-size: 40px;
-      display: flex;
-      align-items: center;
-      span {
-        color: #33cccc;
-        margin-left: 15px;
-        font-size: 16px;
-        font-weight: 700;
-      }
-    }
-    .content {
-      font-size: 14px;
-      color: $light-gray;
-      font-weight: 400;
-    }
-    button {
-      width: 100%;
-      background-color: $bright-yellow;
-      border: none;
-      height: 50px;
-      color: white;
+    font-size: 18px;
+  }
+  &__price {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    span {
+      color: #33cccc;
+      margin-left: 15px;
+      font-size: 16px;
       font-weight: 700;
-      border-radius: 5px;
-      box-shadow: 0px 5px 10px 0 hsla(179, 62%, 23%, 0.52);
-    }
-    button:hover {
-      background-color: #33cccc;
     }
   }
+  &__desc {
+    font-size: 14px;
+    color: $light-gray;
+    font-weight: 400;
+  }
+}
 
-  .why-us {
-    height: 228px;
+.why-us {
+  height: 228px;
+  background-color: #33cccc;
+  border-radius: 0 0 10px 10px;
+
+  @include laptop() {
+    width: 50%;
+    height: 260px;
+    border-radius: 0 0 10px 0;
+  }
+  &__title {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__desc {
+    color: $light-gray;
+    line-height: 20px;
+    max-width: 180px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+button {
+  width: 100%;
+  background-color: $bright-yellow;
+  border: none;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px 0 hsla(179, 62%, 23%, 0.52);
+  &:hover {
     background-color: #33cccc;
-    border-radius: 0 0 10px 10px;
-
-    @include laptop() {
-      width: 50%;
-      height: 260px;
-      border-radius: 0 0 10px 0;
-    }
-    .title {
-      color: white;
-      font-weight: 700;
-      font-size: 18px;
-    }
-
-    .content {
-      color: $light-gray;
-      line-height: 20px;
-      max-width: 180px;
-      font-size: 14px;
-      font-weight: 400;
-    }
   }
 }
 
@@ -164,8 +150,8 @@ main {
   text-align: center;
   background-color: $light-gray;
   height: 50px;
-}
-.attribution a {
-  color: hsl(179, 62%, 20%);
-  text-decoration: none;
+  &__link {
+    color: hsl(179, 62%, 20%);
+    text-decoration: none;
+  }
 }

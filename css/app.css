@@ -8,28 +8,10 @@
 body {
   font-size: 16px;
   font-family: "Karla", sans-serif;
-}
-
-main {
   background-color: #e5eff5;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-.container {
-  height: 80%;
+.price-component {
   max-width: 312px;
   margin: 72px auto;
   display: -webkit-box;
@@ -48,7 +30,7 @@ main {
 }
 
 @media (min-width: 768px) {
-  .container {
+  .price-component {
     max-width: 635px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -59,11 +41,10 @@ main {
   }
 }
 
-.container .join,
-.container .suscribe,
-.container .why-us {
+.join,
+.suscribe,
+.why-us {
   width: 100%;
-  background-color: white;
   padding: 0 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -81,9 +62,9 @@ main {
 }
 
 @media (min-width: 768px) {
-  .container .join,
-  .container .suscribe,
-  .container .why-us {
+  .join,
+  .suscribe,
+  .why-us {
     padding: 40px 40px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -91,28 +72,29 @@ main {
   }
 }
 
-.container .join {
+.join {
+  background-color: white;
   height: 268px;
   font-weight: 700;
   border-radius: 10px 10px 0 0;
 }
 
 @media (min-width: 768px) {
-  .container .join {
+  .join {
     height: 220px;
   }
 }
 
-.container .join .title {
+.join__title {
   color: #2ab2af;
   font-size: 20px;
 }
 
-.container .join .sub-title {
+.join__subtitle {
   color: #c0df34;
 }
 
-.container .join .content {
+.join__desc {
   color: #98a6bd;
   line-height: 30px;
   font-weight: 400;
@@ -120,31 +102,31 @@ main {
 }
 
 @media (min-width: 768px) {
-  .container .join .content {
+  .join__desc {
     max-width: 510px;
   }
 }
 
-.container .suscribe {
+.suscribe {
   height: 228px;
   background-color: #2ab2af;
   color: white;
 }
 
 @media (min-width: 768px) {
-  .container .suscribe {
+  .suscribe {
     width: 50%;
     height: 260px;
     border-radius: 0 0 0 10px;
   }
 }
 
-.container .suscribe .title {
+.suscribe__title {
   color: white;
   font-size: 18px;
 }
 
-.container .suscribe .price {
+.suscribe__price {
   font-size: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,20 +136,48 @@ main {
           align-items: center;
 }
 
-.container .suscribe .price span {
+.suscribe__price span {
   color: #33cccc;
   margin-left: 15px;
   font-size: 16px;
   font-weight: 700;
 }
 
-.container .suscribe .content {
+.suscribe__desc {
   font-size: 14px;
   color: #e5eff5;
   font-weight: 400;
 }
 
-.container .suscribe button {
+.why-us {
+  height: 228px;
+  background-color: #33cccc;
+  border-radius: 0 0 10px 10px;
+}
+
+@media (min-width: 768px) {
+  .why-us {
+    width: 50%;
+    height: 260px;
+    border-radius: 0 0 10px 0;
+  }
+}
+
+.why-us__title {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.why-us__desc {
+  color: #e5eff5;
+  line-height: 20px;
+  max-width: 180px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+button {
   width: 100%;
   background-color: #c0df34;
   border: none;
@@ -179,36 +189,8 @@ main {
           box-shadow: 0px 5px 10px 0 rgba(22, 95, 94, 0.52);
 }
 
-.container .suscribe button:hover {
+button:hover {
   background-color: #33cccc;
-}
-
-.container .why-us {
-  height: 228px;
-  background-color: #33cccc;
-  border-radius: 0 0 10px 10px;
-}
-
-@media (min-width: 768px) {
-  .container .why-us {
-    width: 50%;
-    height: 260px;
-    border-radius: 0 0 10px 0;
-  }
-}
-
-.container .why-us .title {
-  color: white;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.container .why-us .content {
-  color: #e5eff5;
-  line-height: 20px;
-  max-width: 180px;
-  font-size: 14px;
-  font-weight: 400;
 }
 
 .attribution {
@@ -218,7 +200,7 @@ main {
   height: 50px;
 }
 
-.attribution a {
+.attribution__link {
   color: #135352;
   text-decoration: none;
 }
