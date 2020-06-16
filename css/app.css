@@ -30,8 +30,8 @@ main {
 
 .container {
   height: 80%;
-  width: 80%;
-  margin: 60px auto;
+  max-width: 312px;
+  margin: 72px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,13 +47,24 @@ main {
           justify-content: center;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 635px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .container .join,
 .container .suscribe,
 .container .why-us {
   width: 100%;
   background-color: white;
-  height: 250px;
-  padding: 0 20px;
+  padding: 0 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,38 +80,68 @@ main {
           justify-content: space-evenly;
 }
 
-.container .join .title,
-.container .suscribe .title,
-.container .why-us .title {
-  color: #2ab2af;
-  font-weight: 700;
+@media (min-width: 768px) {
+  .container .join,
+  .container .suscribe,
+  .container .why-us {
+    padding: 40px 40px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
-.container .join .sub-title,
-.container .suscribe .sub-title,
-.container .why-us .sub-title {
-  color: #c0df34;
+.container .join {
+  height: 268px;
   font-weight: 700;
+  border-radius: 10px 10px 0 0;
+}
+
+@media (min-width: 768px) {
+  .container .join {
+    height: 220px;
+  }
+}
+
+.container .join .title {
+  color: #2ab2af;
+  font-size: 20px;
+}
+
+.container .join .sub-title {
+  color: #c0df34;
+}
+
+.container .join .content {
+  color: #98a6bd;
+  line-height: 30px;
+  font-weight: 400;
   font-size: 14px;
 }
 
-.container .join .content,
-.container .suscribe .content,
-.container .why-us .content {
-  color: #98a6bd;
-  font-weight: 400;
-  line-height: 30px;
-  font-size: 13px;
+@media (min-width: 768px) {
+  .container .join .content {
+    max-width: 510px;
+  }
 }
 
 .container .suscribe {
-  height: 230px;
+  height: 228px;
   background-color: #2ab2af;
   color: white;
 }
 
+@media (min-width: 768px) {
+  .container .suscribe {
+    width: 50%;
+    height: 260px;
+    border-radius: 0 0 0 10px;
+  }
+}
+
 .container .suscribe .title {
   color: white;
+  font-size: 18px;
 }
 
 .container .suscribe .price {
@@ -114,15 +155,16 @@ main {
 }
 
 .container .suscribe .price span {
-  font-size: 16px;
-  color: #e5eff5;
+  color: #33cccc;
   margin-left: 15px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .container .suscribe .content {
+  font-size: 14px;
   color: #e5eff5;
   font-weight: 400;
-  margin-top: -25px;
 }
 
 .container .suscribe button {
@@ -138,22 +180,35 @@ main {
 }
 
 .container .suscribe button:hover {
-  background-color: #98a6bd;
+  background-color: #33cccc;
 }
 
 .container .why-us {
-  padding: 20px 90px 20px 20px;
-  height: 220px;
-  background-color: #30cfcc;
+  height: 228px;
+  background-color: #33cccc;
+  border-radius: 0 0 10px 10px;
+}
+
+@media (min-width: 768px) {
+  .container .why-us {
+    width: 50%;
+    height: 260px;
+    border-radius: 0 0 10px 0;
+  }
 }
 
 .container .why-us .title {
   color: white;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .container .why-us .content {
-  color: white;
+  color: #e5eff5;
   line-height: 20px;
+  max-width: 180px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .attribution {
@@ -165,5 +220,6 @@ main {
 
 .attribution a {
   color: #135352;
+  text-decoration: none;
 }
 /*# sourceMappingURL=app.css.map */

@@ -9,6 +9,21 @@ $grayish-blue: hsl(218, 22%, 67%);
   margin: 0;
 }
 
+$laptop: 768px;
+$tablet: 768px;
+
+@mixin laptop {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
 body {
   font-size: 16px;
   font-family: "Karla", sans-serif;
@@ -23,61 +38,85 @@ main {
 }
 .container {
   height: 80%;
-  width: 80%;
-  margin: 60px auto;
+  max-width: 312px;
+  margin: 72px auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  @include laptop() {
+    max-width: 635px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   .join,
   .suscribe,
   .why-us {
     width: 100%;
     background-color: white;
-    height: 250px;
-    padding: 0 20px;
+    padding: 0 25px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    @include laptop() {
+      padding: 40px 40px;
+      justify-content: space-between;
+    }
+  }
+  .join {
+    height: 268px;
+    font-weight: 700;
+    border-radius: 10px 10px 0 0;
+    @include laptop() {
+      height: 220px;
+    }
     .title {
       color: $cyan;
-      font-weight: 700;
+      font-size: 20px;
     }
     .sub-title {
       color: $bright-yellow;
-      font-weight: 700;
-      font-size: 14px;
     }
     .content {
       color: $grayish-blue;
-      font-weight: 400;
       line-height: 30px;
-      font-size: 13px;
+      font-weight: 400;
+      font-size: 14px;
+      @include laptop() {
+        max-width: 510px;
+      }
     }
   }
   .suscribe {
-    height: 230px;
+    height: 228px;
     background-color: $cyan;
     color: white;
+    @include laptop() {
+      width: 50%;
+      height: 260px;
+      border-radius: 0 0 0 10px;
+    }
     .title {
       color: white;
+      font-size: 18px;
     }
     .price {
       font-size: 40px;
       display: flex;
       align-items: center;
       span {
-        font-size: 16px;
-        color: $light-gray;
+        color: #33cccc;
         margin-left: 15px;
+        font-size: 16px;
+        font-weight: 700;
       }
     }
     .content {
+      font-size: 14px;
       color: $light-gray;
       font-weight: 400;
-      margin-top: -25px;
     }
     button {
       width: 100%;
@@ -90,20 +129,32 @@ main {
       box-shadow: 0px 5px 10px 0 hsla(179, 62%, 23%, 0.52);
     }
     button:hover {
-      background-color: $grayish-blue;
+      background-color: #33cccc;
     }
   }
+
   .why-us {
-    padding: 20px 90px 20px 20px;
-    height: 220px;
-    background-color: hsl(179, 62%, 50%);
+    height: 228px;
+    background-color: #33cccc;
+    border-radius: 0 0 10px 10px;
+
+    @include laptop() {
+      width: 50%;
+      height: 260px;
+      border-radius: 0 0 10px 0;
+    }
     .title {
       color: white;
+      font-weight: 700;
+      font-size: 18px;
     }
 
     .content {
-      color: white;
+      color: $light-gray;
       line-height: 20px;
+      max-width: 180px;
+      font-size: 14px;
+      font-weight: 400;
     }
   }
 }
@@ -116,4 +167,5 @@ main {
 }
 .attribution a {
   color: hsl(179, 62%, 20%);
+  text-decoration: none;
 }
