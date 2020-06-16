@@ -1,0 +1,119 @@
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+main {
+  background-color: $light-gray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  height: 80%;
+  width: 80%;
+  margin: 60px auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .join,
+  .suscribe,
+  .why-us {
+    width: 100%;
+    background-color: white;
+    height: 250px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    .title {
+      color: $cyan;
+      font-weight: 700;
+    }
+    .sub-title {
+      color: $bright-yellow;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .content {
+      color: $grayish-blue;
+      font-weight: 400;
+      line-height: 30px;
+      font-size: 13px;
+    }
+  }
+  .suscribe {
+    height: 230px;
+    background-color: $cyan;
+    color: white;
+    .title {
+      color: white;
+    }
+    .price {
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 16px;
+        color: $light-gray;
+        margin-left: 15px;
+      }
+    }
+    .content {
+      color: $light-gray;
+      font-weight: 400;
+      margin-top: -25px;
+    }
+    button {
+      width: 100%;
+      background-color: $bright-yellow;
+      border: none;
+      height: 50px;
+      color: white;
+      font-weight: 700;
+      border-radius: 5px;
+      box-shadow: 0px 5px 10px 0 hsla(179, 62%, 23%, 0.52);
+    }
+    button:hover {
+      background-color: $grayish-blue;
+    }
+  }
+  .why-us {
+    padding: 20px 90px 20px 20px;
+    height: 220px;
+    background-color: hsl(179, 62%, 50%);
+    .title {
+      color: white;
+    }
+
+    .content {
+      color: white;
+      line-height: 20px;
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  background-color: $light-gray;
+  height: 50px;
+}
+.attribution a {
+  color: hsl(179, 62%, 20%);
+}
